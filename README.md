@@ -1,7 +1,9 @@
 # Chuck Norris jokes random machine
 ## Project setup
 ```
-git clone git:....
+git clone git@github.com:learodrigo/chuck-norris-jokes.git
+git fetch --all
+git checkout sendable
 npm install
 ```
 
