@@ -15,8 +15,8 @@
 </template>
 
 <script>
-    import Dropdown from './Dropdown'
-    import ItemsList from './ItemsList'
+    import Dropdown from './Filter/Dropdown'
+    import ItemsList from './Filter/ItemsList'
     import Joke from './Joke'
 
     export default {

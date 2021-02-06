@@ -1,7 +1,7 @@
 <template>
   <div class="about">
         <joke-holder></joke-holder>
-        <h1>Hello World!</h1>
+        <h1>Hola!</h1>
         <info></info>
     </div>
 </template>

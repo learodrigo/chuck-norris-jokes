@@ -19,7 +19,8 @@
 
         data: () => {
             return {
-                cardJoke: {}
+                cardJoke: {},
+                changingQoutes: null
             }
         },
 
@@ -32,15 +33,20 @@
                     console.error(e)
                 })
             },
+
+            handleAsync () {
+                try {
+                    this.newRandomJoke()
+                }
+                catch (e) {
+                    console.error(e)
+                }
+            }
         },
 
         mounted () {
-            try {
-                this.newRandomJoke()
-            }
-            catch (e) {
-                console.error(e)
-            }
+            this.handleAsync()
+            this.changingQoutes = setInterval(this.handleAsync(), 30000)
         },
     }
 </script>
