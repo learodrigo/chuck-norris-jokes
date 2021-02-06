@@ -5,6 +5,7 @@
                 class="card__category"
                 v-if="joke.categories && joke.categories[0] != undefined"
                 v-bind:class="{'special_card__span' : isBig}"
+                title="This is the quote category"
             >
                 {{ formatCategory(joke.categories[0]) }}
             </div>
@@ -107,5 +108,12 @@
 }
 .card__message > p {
     justify-content: space-between;
+}
+@media only screen and (max-width: 730px) {
+    .special_card {
+        margin: 0 auto !important;
+        max-width: none !important;
+        width: 100%;
+    }
 }
 </style>

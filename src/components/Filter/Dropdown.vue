@@ -33,4 +33,10 @@
     height: 34px;
     width: 200px;
 }
+@media only screen and (max-width: 730px) {
+    #dropdown {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+}
 </style>>

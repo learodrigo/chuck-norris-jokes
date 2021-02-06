@@ -54,4 +54,21 @@ $height: 34px;
         right: 0;
     }
 }
+@media only screen and (max-width: 730px) {
+    .search-bar {
+        width: 100%;
+
+        .button {
+            position: relative;
+            width: 100%;
+        }
+    }
+    #site-search {
+        border-radius: 8px;
+        margin-bottom: 8px;;
+        min-width: unset;
+        max-width: none;
+        width: 100%;
+    }
+}
 </style>

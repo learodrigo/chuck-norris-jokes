@@ -92,4 +92,10 @@
     margin: 0 auto;
     width: 680px;
 }
+@media only screen and (max-width: 730px) {
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
 </style>>

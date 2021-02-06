@@ -1,5 +1,5 @@
 <template>
-    <ul clases="joke-holder">
+    <ul class="joke-holder">
         <div class="joke-holder__buttons">
             <button @click="handleTrigger" id="trigger">Retrigger</button>
             <span class="button__description">This card changes every 30 seconds</span>
@@ -89,6 +89,7 @@ $max-width: 500px;
 
 .joke-holder {
     display: block;
+    margin: 0 auto;
     width: $max-width;
 }
 
@@ -118,5 +119,26 @@ $max-width: 500px;
     display: inline-block;
     font-size: 10px;
     padding: 8px;
+}
+
+@media only screen and (max-width: 730px) {
+    .joke-holder {
+        margin: 0 auto !important;
+        width: 90% !important;
+    }
+    .joke-holder__buttons {
+        flex-direction: column;
+    }
+    .button__description {
+        display: none;
+    }
+    #trigger,
+    #sendable {
+        padding: 16px;
+        width: 100%;
+    }
+    #trigger {
+        margin-bottom: 16px;;
+    }
 }
 </style>

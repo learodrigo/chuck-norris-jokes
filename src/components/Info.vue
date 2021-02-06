@@ -59,11 +59,30 @@
 p {
     margin: 16px 0;
 }
+.info_text {
+    margin-bottom: 48px;
+}
 .social-media__list {
     align-items: center;
     display: flex;
 }
+.social-media__list > a {
+    color: black;
+    font-weight: bold;
+}
+.social-media__list > a:hover {
+    text-decoration: none;
+    color: lightgray;
+}
 .material-icons {
     margin-right: 8px;
+}
+@media only screen and (max-width: 730px) {
+    .social-media {
+        margin-left: 10%;
+    }
+    .social-media__list {
+        padding: 8px 0
+    }
 }
 </style>

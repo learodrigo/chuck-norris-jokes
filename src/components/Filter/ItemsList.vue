@@ -47,4 +47,9 @@
     margin: 24px;
     position: relative;
 }
+@media only screen and (max-width: 730px) {
+    .filters {
+        flex-direction: column;
+    }
+}
 </style>>

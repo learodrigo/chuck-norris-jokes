@@ -77,4 +77,13 @@
 .info__text {
     text-align: left;
 }
+@media only screen and (max-width: 730px) {
+    .title-info,
+    .info__text {
+        margin: 0 auto;
+        max-width: none;
+        text-align: center;
+        width: 90%;
+    }
+}
 </style>
