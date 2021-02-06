@@ -1,7 +1,7 @@
 <template>
     <select name="dropdown" id="dropdown" v-model="selectedOptions" @change="handleChange">
         <option value="all" selected>All</option>
-        <option v-for="category in this.categories" :value="category" v-text="category"></option>
+        <!-- <option v-for="category in this.categories" :value="category" v-text="category"></option> -->
     </select>
 </template>
 

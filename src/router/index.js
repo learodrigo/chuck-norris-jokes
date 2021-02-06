@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import About from '../views/About.vue'
 import Home from '../views/Home.vue'
-import Eror404 from '../views/Eror404.vue'
+import Error404 from '../views/Error404.vue'
 
 const routes = [
   {
@@ -18,7 +18,7 @@ const routes = [
   {
     path: '/404',
     name: 'not-found',
-    component: Eror404
+    component: Error404
   }
 ]
 

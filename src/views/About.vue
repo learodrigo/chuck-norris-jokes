@@ -1,5 +1,25 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+        <joke-holder></joke-holder>
+        <h1>Hello World!</h1>
+        <info></info>
+    </div>
 </template>
+
+<script>
+    import Info from '../components/Info'
+    import JokeHolder from '../components/JokeHolder'
+
+    export default {
+        name: "About",
+
+        components: {
+            Info,
+            JokeHolder
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>
