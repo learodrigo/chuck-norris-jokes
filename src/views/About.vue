@@ -8,7 +8,7 @@
 
 <script>
     import Info from '../components/Info'
-    import JokeHolder from '../components/JokeHolder'
+    import JokeHolder from '../components/Jokes/JokeHolder'
 
     export default {
         name: "About",

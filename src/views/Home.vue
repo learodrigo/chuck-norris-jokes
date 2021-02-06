@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import JokeHolder from '../components/JokeHolder'
-    import ListContainer from '../components/ListContainer'
+    import JokeHolder from '../components/Jokes/JokeHolder'
+    import ListContainer from '../components/Jokes/ListContainer'
 
     export default {
         name: "Home",
