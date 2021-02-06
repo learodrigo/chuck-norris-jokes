@@ -32,8 +32,9 @@ option to retry fetching data from the CNDb
 
 [x] As a user I want to be able to filter the list of jokes for the known categories of jokes
 
-[] As a user I want to see a list of jokes that are the result of a simple text search query
-As a user I want to send a specific joke from the list per email to a friend. The email
+[X] As a user I want to see a list of jokes that are the result of a simple text search query
+
+[] As a user I want to send a specific joke from the list per email to a friend. The email
 sending dialog should open the mail application when I use this function
 
 [x] As a user I want to navigate to another page that displays some information to me about

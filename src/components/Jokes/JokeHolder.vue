@@ -1,6 +1,10 @@
 <template>
     <ul>
         <joke :key="cardJoke.id" :joke="cardJoke" :isBig="true"></joke>
+        <div>
+            <button @click="handleTrigger" id="trigger">Retrigger</button>
+            <button @click="handleEmail" id="sendable">Send by email</button>
+        </div>
     </ul>
 </template>
 
@@ -41,12 +45,28 @@
                 catch (e) {
                     console.error(e)
                 }
+            },
+
+            handleIntervals () {
+                this.handleAsync()
+                this.changingQoutes = setInterval(this.handleAsync(), 30000)
+            },
+
+            handleTrigger (e) {
+                e.preventDefault()
+                clearInterval(this.changingQoutes)
+                this.handleAsync()
+            },
+
+            handleEmail (e) {
+                e.preventDefault()
+
+                document.location = `mailto:user@example.com?subject=${'Chuck Norris quote machine'}&body=${this.cardJoke.value}`
             }
         },
 
         mounted () {
-            this.handleAsync()
-            this.changingQoutes = setInterval(this.handleAsync(), 30000)
+            this.handleIntervals()
         },
     }
 </script>
