@@ -27,8 +27,8 @@
                 :key="item.id"
                 class="social-media__list"
             >
-                    <a :href="item.link" target="_blank">{{ item.type }}</a>
                 <span class="material-icons">{{ item.icon }}</span>
+                <a :href="item.link" target="_blank">{{ item.type }}</a>
             </li>
         </ul>
     </div>
@@ -52,6 +52,18 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.container {
+    margin-bottom: 150px;;
+}
+p {
+    margin: 16px 0;
+}
+.social-media__list {
+    align-items: center;
+    display: flex;
+}
+.material-icons {
+    margin-right: 8px;
+}
 </style>

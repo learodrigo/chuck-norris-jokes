@@ -1,12 +1,14 @@
 <template>
     <ul clases="joke-holder">
-        <div v-if="failed" class="joke-holder__alter"></div>
-        <joke :key="cardJoke.id" :joke="cardJoke" :isBig="true"></joke>
-
         <div class="joke-holder__buttons">
             <button @click="handleTrigger" id="trigger">Retrigger</button>
+            <span class="button__description">This card changes every 30 seconds</span>
             <button @click="handleEmail" id="sendable">Send by email</button>
         </div>
+
+        <joke :key="cardJoke.id" :joke="cardJoke" :isBig="true"></joke>
+
+        <div v-if="failed" class="joke-holder__alter"></div>
     </ul>
 </template>
 
@@ -83,14 +85,38 @@
 </script>
 
 <style lang="scss" scoped>
+$max-width: 500px;
+
 .joke-holder {
     display: block;
-    width: 500px;
+    width: $max-width;
 }
 
 .joke-holder__buttons {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin: 24px auto 32px auto;
+    width: $max-width;
+}
+
+#trigger,
+    #sendable {
+        border: 0;
+        border-radius: 4px;
+        color: white;
+        padding: 4px 8px;
+    }
+    #trigger {
+        background-color: #2955ce;
+    }
+    #sendable {
+        background-color: #ce2955;
+    }
+
+.button__description {
+    display: inline-block;
+    font-size: 10px;
+    padding: 8px;
 }
 </style>

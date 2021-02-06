@@ -1,35 +1,28 @@
 <template>
     <li v-bind:class="['card', isBig ? 'special_card' : '']">
-        <div class="card__category">
-            <!-- <img
-                :src="joke.icon_url"
-                :alt="joke.value"
-                v-bind:class="{'special_card__image' : isBig}"
-            /> -->
-            <span
+        <a target="_blank" :href="joke.url">
+            <div
+                class="card__category"
                 v-if="joke.categories && joke.categories[0] != undefined"
-                v-bind:class="{'special_card__span' : isBig}">
-                    {{ formatCategory(joke.categories[0]) }}
-            </span>
-        </div>
+                v-bind:class="{'special_card__span' : isBig}"
+            >
+                {{ formatCategory(joke.categories[0]) }}
+            </div>
 
-        <figure>
-            <blockquote class="card__message" :cite="joke.url">
-                <p style="flex">{{ joke.value }}</p>
-            </blockquote><figcaption>{{ randomFigCaption() }}</figcaption>
-        </figure>
-
-        <a target="_blank" :href="joke.url">Check online</a>
+            <figure>
+                <blockquote class="card__message" :cite="joke.url">
+                    <p style="flex">{{ joke.value }}</p>
+                </blockquote>
+                <figcaption v-if="!isBig"><i>{{ randomFigCaption() }}</i></figcaption>
+            </figure>
+        </a>
     </li>
 </template>
 
 <script>
     export default {
         name: 'Joke',
-        props: {
-            joke: Object,
-            isBig: Boolean
-        },
+        props: ['joke', 'isBig'],
 
         data: () => {
             return {
@@ -54,38 +47,46 @@
 <style lang="scss" scoped>
 .card {
     background: lightgray;
-    border-radius: 8px;
+    border-radius: 8px 0 0 8px;
+    border-right: 30px solid darkgray;
+    box-shadow: -6px 5px 5px rgba(0, 0, 0, 0.3);
     display: block;
     height: auto;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     padding: 16px;
     text-align: center;
 
     a {
-        background-color: #F15A24;
-        color: white;
-        display: inline-block;
-        padding: 4px;
+        color: black;
         text-decoration: none;
+    }
+
+    &.special_card {
+        border: none;
+        border-radius: 8px;
+        box-shadow: none;
+        font-size: 20px;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .special_card__image,
+    .special_card__span {
+        display: none;
     }
 }
 .card__category {
-    display: block;
-    margin-bottom: 32px;
+    background-color: black;
+    color: white;
+    display: inline-block;
+    margin-bottom: 12px;
     position: relative;
-
-    span {
-        background-color: black;
-        color: white;
-        display: inline-block;
-        left: 50%;
-        padding: 2px;
-        position: absolute;
-    }
+    padding: 4px;
 }
 .card__message {
     align-items: center;
     display: flex;
+    margin-bottom: 8px;
 
     img {
         display: block;
@@ -98,20 +99,13 @@
     background-color: lightgray;
     padding: 10px;
 }
-.flex > *:first-child {
+.card__message > p {
+    text-align: left
+}
+.card__message > p > *:first-child {
     margin-right: 8px;
 }
-.flex {
+.card__message > p {
     justify-content: space-between;
-}
-
-.special_card {
-    margin: 0 auto;
-    max-width: 400px;
-
-    .special_card__image,
-    .special_card__span {
-        display: none;
-    }
 }
 </style>

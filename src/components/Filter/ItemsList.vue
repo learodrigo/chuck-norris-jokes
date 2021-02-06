@@ -1,13 +1,7 @@
 <template>
     <div class="filters">
-        <div>
-            <h3>Category</h3>
-            <dropdown @update:option="changeReceived" v-model="dropdownValue" :categories="categories"></dropdown>
-        </div>
-
-        <div>
-            <search @update:query="updateQuery"></search>
-        </div>
+        <dropdown @update:option="changeReceived" v-model="dropdownValue" :categories="categories"></dropdown>
+        <search @update:query="updateQuery"></search>
     </div>
 </template>
 
@@ -17,10 +11,7 @@
 
     export default {
         name: 'ItemsList',
-        props: {
-            categories: Array,
-            totalNow: Number
-        },
+        props: ['categories', 'totalNow'],
 
         components: {
             Dropdown,
@@ -53,6 +44,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin: 24px;
     position: relative;
 }
 </style>>

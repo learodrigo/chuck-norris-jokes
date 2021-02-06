@@ -14,7 +14,7 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: monospace;
             margin: 0;
             padding: 0;
         }
@@ -44,6 +44,15 @@
 
             /* Support for IE. */
             font-feature-settings: 'liga';
+        }
+
+        @media only screen and (max-width: 768px) {
+            * {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                padding: 0 16px;
+            }
         }
     </style>
   </head>
