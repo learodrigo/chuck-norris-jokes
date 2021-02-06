@@ -1,13 +1,13 @@
 <template>
     <li v-bind:class="['card', isBig ? 'special_card' : '']">
         <div class="card__category">
-            <img
+            <!-- <img
                 :src="joke.icon_url"
                 :alt="joke.value"
                 v-bind:class="{'special_card__image' : isBig}"
-            />
+            /> -->
             <span
-                v-if="joke.categories"
+                v-if="joke.categories && joke.categories[0] != undefined"
                 v-bind:class="{'special_card__span' : isBig}">
                     {{ formatCategory(joke.categories[0]) }}
             </span>
@@ -16,8 +16,7 @@
         <figure>
             <blockquote class="card__message" :cite="joke.url">
                 <p style="flex">{{ joke.value }}</p>
-            </blockquote>
-            <figcaption>{{ randomFigCaption() }}</figcaption>
+            </blockquote><figcaption>{{ randomFigCaption() }}</figcaption>
         </figure>
 
         <a target="_blank" :href="joke.url">Check online</a>
@@ -54,9 +53,12 @@
 
 <style lang="scss" scoped>
 .card {
-    background: red;
+    background: lightgray;
+    border-radius: 8px;
     display: block;
     height: auto;
+    margin-bottom: 18px;
+    padding: 16px;
     text-align: center;
 
     a {
@@ -69,14 +71,13 @@
 }
 .card__category {
     display: block;
+    margin-bottom: 32px;
     position: relative;
-    width: 100%;
 
     span {
         background-color: black;
         color: white;
         display: inline-block;
-        font-size: bold;
         left: 50%;
         padding: 2px;
         position: absolute;
