@@ -42,3 +42,10 @@ the coder of the application and that displays a link to the repository where I 
 application. As I am addicted to those random jokes I still want to see a random joke any
 30 seconds, so the random joke should be displayed as an app header along with the
 navigation menu bar
+
+## Thoughts
+Even though I didn't manage to complete the 100% of this activity, I had fun and finally set up
+something from scratch. I lost a lot of time dealing with issues between packages. Actually,
+this was the second attempt. [My fist tried was here](https://github.com/learodrigo/chuck-norris-random-jokes),
+where I was doing everything from scratch, but after some time withou success I decided to go
+with vue cli.
